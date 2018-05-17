@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+Based on your height and weight, we predict that you prefer <%= @preference.pet %>.  Is this correct?
+
+
+<%= form_tag :action => 'test' do %>
+    <%= label_tag(:correct_yes, "Yes") %>
+    <%= radio_button_tag(:correct, 1) %>
+ 
+    <%= label_tag(:correct_no, "No") %>
+    <%= radio_button_tag(:correct, 0) %>
+
+    <br/>
+  <%= submit_tag "Submit" %>
+<% end %>
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_preference_path(@preference) %> |
+<%= link_to 'Back', preferences_path %>
