@@ -4,6 +4,7 @@ Based on your height and weight, we predict that you prefer <%= @preference.pet 
 
 
 <%= form_tag :action => 'test' do %>
+    <%= hidden_field_tag 'id', params[:id]%>
     <%= label_tag(:correct_yes, "Yes") %>
     <%= radio_button_tag(:correct, 1) %>
  
