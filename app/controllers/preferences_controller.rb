@@ -43,11 +43,12 @@ class PreferencesController < ApplicationController
     end
     
     #redirect to results exploration page
-    redirect_to action: "results"
+    render action: "results", id: params[:id]
 
   end
 
   def results
+    
   end
 
 

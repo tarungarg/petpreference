@@ -11,7 +11,7 @@ Based on your height and weight, we predict that you prefer <strong><%= @prefere
     <%= label_tag(:correct_no, "No") %>
     <%= radio_button_tag(:correct, 0) %>
 
-    <%= hidden_field_tag(:id, @preference.id) %>
+    <%#= hidden_field_tag(:id, @preference.id) %>
 
     <br/>
   <%= submit_tag "Submit" %>
