@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-Based on your height and weight, we predict that you prefer <%= @preference.pet %>.  Is this correct?
+Based on your height and weight, we predict that you prefer <strong><%= @preference.pet.pluralize %></strong>.  Is this correct?
 
 
 <%= form_tag :action => 'test' do %>
@@ -9,6 +9,8 @@ Based on your height and weight, we predict that you prefer <%= @preference.pet 
  
     <%= label_tag(:correct_no, "No") %>
     <%= radio_button_tag(:correct, 0) %>
+
+    <%= hidden_field_tag(:id, @preference.id) %>
 
     <br/>
   <%= submit_tag "Submit" %>

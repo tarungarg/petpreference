@@ -28,12 +28,26 @@ class PreferencesController < ApplicationController
     logger.debug('correction is: ' + params[:correct])
     logger.debug('prediction is: ' + @preference.pet)
 
-    #If prediction was correct, flas as correct in db
+    #Record whether or not prediction was correct
+    @preference.update(correct: params[:correct])
 
+    #If prediction was incorrect, swap pet values
+    if params[:correct] == '0'
 
-    #If prediction incorrect, change pet value in database, and flag as incorrect.
+      if @preference.pet == 'dog'
+        @preference.update(pet: 'cat')
+      else
+        @preference.update(pet: 'dog')
+      end
+
+    end
     
     #redirect to results exploration page
+    redirect_to action: "results"
+
+  end
+
+  def results
   end
 
 
